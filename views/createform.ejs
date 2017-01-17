@@ -1,0 +1,23 @@
+<h1>Make New Todo</h1>
+<div class="container">
+  <form method='POST' action='/todos/'>
+    <div class="form-group">
+      <label for="name">Name:</label>
+      <input type="text" class="form-control" name="name">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <input type="text" class="form-control" name="description" >
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="completed">Completed?</label>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form>
+  <br>
+  <% if (error) {%>
+    <%= error%>
+    <br>
+    <p>Please reenter information and press submit.</p>
+  <% }%>
+</div>

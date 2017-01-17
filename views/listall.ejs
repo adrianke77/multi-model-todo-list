@@ -1,0 +1,36 @@
+<div class="container">
+  <h1>Todo List:</h1>
+  <table class="table ">
+    <thead class = 'thead thead-inverse'>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Status</th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody>
+      <% data.forEach(( val,ind ) => { %>
+      <tr>
+        <td><%= val.name%></td>
+        <td><%= val.description%></td>
+        <td><%= completionStatus[ind]%></td>
+        <td class = "horizcenter">
+          <button type = "button" class = "btn btn-sm "
+          onclick = "window.location.href = '/todos/show/<%= val._id%>' ">
+          Details</button>
+          <button type = "button" class = "btn btn-sm "
+          onclick = "window.location.href = '/todos/edit/<%= val._id%>' ">
+          Update</button>
+          <button type = "button" class = "btn btn-sm "
+          onclick = "window.location.href = '/todos/delete/<%= val._id%>?_method=DELETE' ">
+          Delete</button>
+        </td>
+      </tr>
+      <% }) %>
+    </tbody>
+  </table>
+  <button type = "button" class = "btn btn-block "
+  onclick = "window.location.href = '/todos/make' ">
+  New ToDo</button>
+</div>
